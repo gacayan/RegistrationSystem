@@ -1,0 +1,52 @@
+﻿@page
+@model RegistrationSystem.Pages.PersonModel
+@{
+}
+<div class="container">
+           <h1> Person Registration</h1>
+        <form method="post">
+            <div class="form-group">
+                <label> UserName </label>
+              <input class="form-control" asp-for="Person.Username" />
+            </div>
+            <div class="form-group">
+                <label> Password </label>
+              <input class="form-control" asp-for="Person.Password" />
+            </div>
+            <div class="form-group">
+                <label> ConfirmPassword </label>
+                <input class="form-control" asp-for="Person.ConfirmPassword" />
+            </div>
+            <div class="form-group">
+                <label> EmailAddress </label>
+
+                <input class="form-control" asp-for="Person.EmailAddress" />
+            </div>
+            <button class="btn btn-primary btn-block" type"Submit"> Save</button>
+        </form>
+    </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>ConfirmPassword</th>
+            <th>EmailPassword</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model.Persons)
+        {
+          <tr>
+              <td>@person.UserID</td>
+              <td>@person.Username</td>
+              <td>@person.Password</td>
+              <td>@person.ConfirmPassword</td>
+              <td>@person.EmailAddress</td>
+          </tr>
+        }
+    </tbody>
+
+</table>

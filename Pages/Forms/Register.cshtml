@@ -1,0 +1,17 @@
+﻿@page
+@model RegistrationSystem.Pages.Forms.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Person.Username" placeholder="UserName" />
+    <input asp-for="Person.Password"placeholder="Password" />
+    <input asp-for="Person.ConfirmPassword" placeholder="ConfirmPassword" />
+    <input asp-for="Person.EmailAddress" placeholder="EmailAddress" />
+    <button type="submit">Submit</button>
+
+</form>
+
+
+
